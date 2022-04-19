@@ -134,3 +134,106 @@ func next_level():
 		else:
 			get_node(Global.levels[Global.level - 1]["music"]).stop()
 			get_node(Global.levels[Global.level]["music"]).play()
+
+var save_data = {
+	"saves": {
+		"save0": {
+			"lives":10
+			,"jewels":0
+			,"saveState": null
+			,"level": get_node_or_null("res://Levels/Level1.tscn")
+			,"position": Vector2(200,200)
+		},
+		"save1": {
+			"lives": null
+			,"jewels": null
+			,"saveState": null
+			,"level": get_node_or_null("res://Levels/Level1.tscn")
+			,"position": Vector2(200,200)
+
+		},
+		"save2": {
+			"lives": null
+			,"jewels": null
+			,"saveState": null
+			,"level": get_node_or_null("res://Levels/Level1.tscn")
+			,"position": Vector2(200,200)
+
+		},
+		"save3": {
+			"lives": null
+			,"jewels": null
+			,"saveState": null
+			,"level": get_node_or_null("res://Levels/Level1.tscn")
+			,"position": Vector2(200,200)
+
+		}
+	}
+}
+
+func save_game(save):
+	save_data["saves"]["save" + str(save)] = {
+		"lives": lives
+		,"jewels": jewels
+		,"saveState": saveState[save]
+		,"level": current_level
+		,"position": var2str(current_position)
+
+	}
+
+	var save_game = File.new()
+	save_game.open_encrypted_with_pass(SAVE_PATH, File.WRITE, SECRET)	
+	save_game.store_string(to_json(save_data))
+	save_game.close()
+
+func load_saves():
+	var save_game = File.new()
+	if not save_game.file_exists(SAVE_PATH):
+		return null
+	save_game.open_encrypted_with_pass(SAVE_PATH, File.READ, SECRET)
+	var contents = save_game.get_as_text()
+	var result_json = JSON.parse(contents)
+	if result_json.error == OK:
+		save_data = result_json.result
+	else:
+		print("Error: ", result_json.error)
+	save_game.close()
+	
+	saveState[1] = save_data["saves"]["save" + str(1)]["saveState"]
+	saveState[2] = save_data["saves"]["save" + str(2)]["saveState"]
+	saveState[3] = save_data["saves"]["save" + str(3)]["saveState"]
+	
+func load_game(save):
+	menu = false
+	var save_game = File.new()	
+	if not save_game.file_exists(SAVE_PATH):
+		return null
+	save_game.open_encrypted_with_pass(SAVE_PATH, File.READ, SECRET)
+	var contents = save_game.get_as_text()
+	var result_json = JSON.parse(contents)
+	if result_json.error == OK:
+		save_data = result_json.result
+	else:
+		print("Error: ", result_json.error)
+	save_game.close()
+	
+	lives = save_data["saves"]["save" + str(save)]["lives"]
+	jewels = save_data["saves"]["save" + str(save)]["jewels"]
+	saveState[save] = save_data["saves"]["save" + str(save)]["saveState"]
+	current_position = str2var(save_data["saves"]["save" + str(save)]["position"])
+	jewelPositions = str2var(save_data["saves"]["save" + str(save)]["jewelPositions"])
+	var level = save_data["saves"]["save" + str(save)]["level"]
+	if save != 0:
+		current_level = level
+		var _scene = get_tree().change_scene("res://Levels/" + str(level))
+		
+	#call_deferred("restart_level")
+	
+func delete_save(save):
+	save_data["saves"]["save" + str(save)] = save_data["saves"]["save0"]
+	saveState[save] = null
+
+	var save_game = File.new()
+	save_game.open_encrypted_with_pass(SAVE_PATH, File.WRITE, SECRET)	
+	save_game.store_string(to_json(save_data))
+	save_game.close()
