@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://UI/HUD.gd" type="Script" id=1]
 [ext_resource path="res://UI/Menu.gd" type="Script" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Assets/Audio/Music/Sax jingles/Mercury.wav" type="AudioStream" id=4]
 [ext_resource path="res://Assets/Audio/Music/Sax jingles/Mars.wav" type="AudioStream" id=5]
 [ext_resource path="res://Player/Player_Container.gd" type="Script" id=6]
+[ext_resource path="res://Assets/PNG/Default size/fenceRed.png" type="Texture" id=21]
 [ext_resource path="res://UI/Level.gd" type="Script" id=27]
 [ext_resource path="res://UI/Game.gd" type="Script" id=28]
 [ext_resource path="res://Asteroid/Asteroid_Container.gd" type="Script" id=29]
@@ -24,10 +25,21 @@ __meta__ = {
 [node name="Background" type="Node2D" parent="."]
 
 [node name="Sprite" type="Sprite" parent="Background"]
-modulate = Color( 0.192157, 0.423529, 0.188235, 1 )
-position = Vector2( 511.25, 500.014 )
-scale = Vector2( 1.27597, 1.24254 )
+position = Vector2( 514.75, 467.894 )
+scale = Vector2( 1.28723, 1.28723 )
 texture = ExtResource( 3 )
+
+[node name="Sprite2" type="Sprite" parent="Background"]
+position = Vector2( 1544, 467 )
+scale = Vector2( 1.28723, 1.28723 )
+texture = ExtResource( 3 )
+flip_h = true
+
+[node name="Sprite3" type="Sprite" parent="Background"]
+position = Vector2( -516, 467 )
+scale = Vector2( 1.28723, 1.28723 )
+texture = ExtResource( 3 )
+flip_h = true
 
 [node name="Player_Container" type="Node2D" parent="."]
 script = ExtResource( 6 )
@@ -69,25 +81,11 @@ margin_right = 1024.0
 margin_bottom = 30.0
 align = 2
 valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Lives" type="Label" parent="UI/HUD"]
 margin_top = 570.0
 margin_right = 1024.0
 margin_bottom = 600.0
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Damage" type="Label" parent="UI/HUD"]
-margin_top = 570.0
-margin_right = 1024.0
-margin_bottom = 600.0
-text = "Damage:"
-align = 2
 valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -109,9 +107,6 @@ __meta__ = {
 margin_right = 1025.0
 margin_bottom = 600.0
 color = Color( 0, 0, 0, 0.25098 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Label" type="Label" parent="UI/Menu"]
 margin_right = 1024.0
@@ -188,6 +183,92 @@ valign = 1
 [node name="Timer" type="Timer" parent="UI/Level"]
 wait_time = 2.0
 one_shot = true
+
+[node name="Barrier" type="Node2D" parent="."]
+
+[node name="FenceRed" type="Sprite" parent="Barrier"]
+position = Vector2( 528.313, 269 )
+scale = Vector2( 1.14583, 1 )
+texture = ExtResource( 21 )
+offset = Vector2( -33, 2 )
+
+[node name="FenceRed2" type="Sprite" parent="Barrier"]
+position = Vector2( 600, 269 )
+scale = Vector2( 1.14583, 1 )
+texture = ExtResource( 21 )
+offset = Vector2( -33, 2 )
+
+[node name="FenceRed3" type="Sprite" parent="Barrier"]
+position = Vector2( 675, 269 )
+scale = Vector2( 1.14583, 1 )
+texture = ExtResource( 21 )
+offset = Vector2( -33, 2 )
+
+[node name="FenceRed4" type="Sprite" parent="Barrier"]
+position = Vector2( 750, 269 )
+scale = Vector2( 1.14583, 1 )
+texture = ExtResource( 21 )
+offset = Vector2( -33, 2 )
+
+[node name="FenceRed5" type="Sprite" parent="Barrier"]
+position = Vector2( 825, 269 )
+scale = Vector2( 1.14583, 1 )
+texture = ExtResource( 21 )
+offset = Vector2( -33, 2 )
+
+[node name="FenceRed6" type="Sprite" parent="Barrier"]
+position = Vector2( 900, 269 )
+scale = Vector2( 1.14583, 1 )
+texture = ExtResource( 21 )
+offset = Vector2( -33, 2 )
+
+[node name="FenceRed7" type="Sprite" parent="Barrier"]
+position = Vector2( 975, 269 )
+scale = Vector2( 1.14583, 1 )
+texture = ExtResource( 21 )
+offset = Vector2( -33, 2 )
+
+[node name="FenceRed8" type="Sprite" parent="Barrier"]
+position = Vector2( 1050, 269 )
+scale = Vector2( 1.14583, 1 )
+texture = ExtResource( 21 )
+offset = Vector2( -33, 2 )
+
+[node name="FenceRed9" type="Sprite" parent="Barrier"]
+position = Vector2( 450, 269 )
+scale = Vector2( 1.14583, 1 )
+texture = ExtResource( 21 )
+offset = Vector2( -33, 2 )
+
+[node name="FenceRed10" type="Sprite" parent="Barrier"]
+position = Vector2( 375, 269 )
+scale = Vector2( 1.14583, 1 )
+texture = ExtResource( 21 )
+offset = Vector2( -33, 2 )
+
+[node name="FenceRed11" type="Sprite" parent="Barrier"]
+position = Vector2( 300, 269 )
+scale = Vector2( 1.14583, 1 )
+texture = ExtResource( 21 )
+offset = Vector2( -33, 2 )
+
+[node name="FenceRed12" type="Sprite" parent="Barrier"]
+position = Vector2( 225, 269 )
+scale = Vector2( 1.14583, 1 )
+texture = ExtResource( 21 )
+offset = Vector2( -33, 2 )
+
+[node name="FenceRed13" type="Sprite" parent="Barrier"]
+position = Vector2( 150, 269 )
+scale = Vector2( 1.14583, 1 )
+texture = ExtResource( 21 )
+offset = Vector2( -33, 2 )
+
+[node name="FenceRed14" type="Sprite" parent="Barrier"]
+position = Vector2( 75, 269 )
+scale = Vector2( 1.14583, 1 )
+texture = ExtResource( 21 )
+offset = Vector2( -33, 2 )
 
 [node name="Level1" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )

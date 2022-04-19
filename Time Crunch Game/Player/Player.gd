@@ -5,7 +5,7 @@ var velocity = Vector2.ZERO
 var rotation_speed = 6.0
 var speed = 200.0
 var max_speed = 210.0
-var health = 1
+var health = 20
 
 var Effects = null
 onready var Explosion = load("res://Effects/Explosion.tscn")
@@ -25,10 +25,7 @@ func _physics_process(_delta):
 	velocity.x = lerp(velocity.x, 0, .5)
 	velocity.y = lerp(velocity.y, 0, .5)
 	position.x = wrapf(position.x, 0, Global.VP.x)
-	if position.y <= Global.VP.y/2:
-		position.y = Global.VP.y/2
-	if position.y >= Global.VP.y:
-		position.y = Global.VP.y
+
 
 	if Input.is_action_just_pressed("shoot"):
 		var Effects = get_node_or_null("/root/Game/Effects")
@@ -42,10 +39,8 @@ func _physics_process(_delta):
 
 func get_input():
 	var to_return = Vector2.ZERO
-	$Exhaust.hide()
 	if Input.is_action_pressed("forward"):
 		to_return.y -= 1
-		$Exhaust.show()
 	if Input.is_action_just_pressed("forward"):
 		$Engine.play()
 	if Input.is_action_just_released("forward"):

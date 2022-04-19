@@ -32,10 +32,10 @@ func _ready():
 func getInfo():
 	var time = OS.get_time()
 	var time_return = String(time.hour) +":"+String(time.minute)+":"+String(time.second)
-	return "Data Saved at " + time_return + ": \n-Level " + str(Global.levelNum) + "\n   Jewels: " + str(Global.jewels) + "\n   Lives: " + str(Global.lives)
+	return "Data Saved at " + time_return + ": \n-Level " + "\n   Jewels: " + str(Global.jewels) + "\n   Lives: " + str(Global.lives)
 	
 func _on_Back_pressed():
-	var _scene = get_tree().change_scene("res://UI/Main_Menu.tscn")
+	var _scene = get_tree().change_scene("res://Game.tscn")
 
 
 func _on_Slot1_pressed():
