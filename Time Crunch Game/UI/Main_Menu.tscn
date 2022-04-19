@@ -1,0 +1,292 @@
+[gd_scene load_steps=28 format=2]
+
+[ext_resource path="res://UI/Main_Menu.gd" type="Script" id=1]
+[ext_resource path="res://Assets/PNG/Default size/tileGrass1.png" type="Texture" id=2]
+[ext_resource path="res://Assets/PNG/Default size/tileGrass_roadCrossing.png" type="Texture" id=3]
+[ext_resource path="res://Assets/PNG/Default size/tileGrass_transitionS.png" type="Texture" id=4]
+[ext_resource path="res://Assets/PNG/Default size/tileGrass_roadNorth.png" type="Texture" id=5]
+[ext_resource path="res://Assets/PNG/Default size/tileGrass_roadCornerUL.png" type="Texture" id=6]
+[ext_resource path="res://Assets/PNG/Default size/tileGrass_roadCornerLR.png" type="Texture" id=7]
+[ext_resource path="res://Assets/PNG/Default size/tileGrass_roadCornerUR.png" type="Texture" id=8]
+[ext_resource path="res://Assets/PNG/Default size/tileGrass_roadCornerLL.png" type="Texture" id=9]
+[ext_resource path="res://Assets/PNG/Default size/tank_blue.png" type="Texture" id=10]
+[ext_resource path="res://Assets/PNG/Default size/tank_dark.png" type="Texture" id=11]
+[ext_resource path="res://Assets/PNG/Default size/tank_red.png" type="Texture" id=12]
+[ext_resource path="res://Assets/PNG/Default size/tank_sand.png" type="Texture" id=13]
+[ext_resource path="res://Assets/PNG/Default size/oilSpill_large.png" type="Texture" id=14]
+[ext_resource path="res://Assets/PNG/Default size/treeBrown_twigs.png" type="Texture" id=15]
+[ext_resource path="res://Assets/PNG/Default size/wireStraight.png" type="Texture" id=16]
+[ext_resource path="res://Assets/PNG/Default size/oilSpill_small.png" type="Texture" id=17]
+[ext_resource path="res://Assets/PNG/Default size/treeGreen_twigs.png" type="Texture" id=18]
+[ext_resource path="res://Assets/PNG/Default size/wireCrooked.png" type="Texture" id=19]
+[ext_resource path="res://Assets/PNG/Default size/fenceYellow.png" type="Texture" id=20]
+[ext_resource path="res://Assets/PNG/Default size/fenceRed.png" type="Texture" id=21]
+[ext_resource path="res://Assets/PNG/Default size/barricadeWood.png" type="Texture" id=22]
+[ext_resource path="res://Assets/PNG/Default size/barrelRust_top.png" type="Texture" id=23]
+[ext_resource path="res://Assets/PNG/Default size/barricadeMetal.png" type="Texture" id=24]
+[ext_resource path="res://Assets/PNG/Default size/crateWood.png" type="Texture" id=25]
+[ext_resource path="res://Assets/PNG/Default size/crateMetal.png" type="Texture" id=26]
+[ext_resource path="res://Assets/Audio/Music/Sax jingles/Map.wav" type="AudioStream" id=27]
+
+[node name="Main_Menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -1.0
+margin_top = 1.0
+margin_right = -1.0
+margin_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="Node2D" parent="."]
+position = Vector2( 893, 297.75 )
+scale = Vector2( 9.29688, 9.33594 )
+
+[node name="TileGrass2" type="Sprite" parent="Background"]
+texture = ExtResource( 2 )
+
+[node name="TileGrass1" type="Sprite" parent="Background"]
+position = Vector2( -63.9462, -0.294563 )
+scale = Vector2( 1, 1.00418 )
+texture = ExtResource( 2 )
+
+[node name="TileGrassTransitionS" type="Sprite" parent="Background"]
+position = Vector2( 4.19497, 18.1193 )
+scale = Vector2( 0.658823, 0.681172 )
+texture = ExtResource( 4 )
+offset = Vector2( 9.63264, -10.2857 )
+
+[node name="TileGrassTransitionS2" type="Sprite" parent="Background"]
+position = Vector2( -38.0773, 18.015 )
+scale = Vector2( 0.666128, 0.685977 )
+texture = ExtResource( 4 )
+offset = Vector2( 9.63264, -10.2857 )
+
+[node name="TileGrassTransitionS3" type="Sprite" parent="Background"]
+position = Vector2( -74.8101, 10.4703 )
+scale = Vector2( 0.690756, 0.694561 )
+texture = ExtResource( 4 )
+
+[node name="TileGrassRoadNorth2" type="Sprite" parent="Background"]
+position = Vector2( -40.4437, -31.6787 )
+scale = Vector2( 0.107563, 0.107113 )
+texture = ExtResource( 5 )
+
+[node name="TileGrassRoadNorth" type="Sprite" parent="Background"]
+position = Vector2( -40.4437, -24.8234 )
+scale = Vector2( 0.107563, 0.107113 )
+texture = ExtResource( 5 )
+
+[node name="TileGrassRoadCornerUr2" type="Sprite" parent="Background"]
+position = Vector2( -47.2202, -18.0753 )
+scale = Vector2( 0.107563, 0.107113 )
+texture = ExtResource( 8 )
+
+[node name="TileGrassRoadCrossing" type="Sprite" parent="Background"]
+position = Vector2( -40.4437, -17.9682 )
+scale = Vector2( 0.107563, 0.107113 )
+texture = ExtResource( 3 )
+
+[node name="TileGrassRoadCornerUl" type="Sprite" parent="Background"]
+position = Vector2( -40.4437, -11.2201 )
+scale = Vector2( 0.107563, 0.107113 )
+texture = ExtResource( 6 )
+
+[node name="TileGrassRoadCornerLr2" type="Sprite" parent="Background"]
+position = Vector2( -54.1042, -4.47197 )
+scale = Vector2( 0.107563, 0.107113 )
+texture = ExtResource( 7 )
+
+[node name="TileGrassRoadNorth3" type="Sprite" parent="Background"]
+position = Vector2( -54.1042, 2.38327 )
+scale = Vector2( 0.107563, 0.107113 )
+texture = ExtResource( 5 )
+
+[node name="TileGrassRoadCornerLr" type="Sprite" parent="Background"]
+position = Vector2( -47.2202, -11.2201 )
+scale = Vector2( 0.107563, 0.107113 )
+texture = ExtResource( 7 )
+
+[node name="TileGrassRoadCornerUl2" type="Sprite" parent="Background"]
+position = Vector2( -47.2202, -4.47197 )
+scale = Vector2( 0.107563, 0.107113 )
+texture = ExtResource( 6 )
+
+[node name="TileGrassRoadNorth4" type="Sprite" parent="Background"]
+position = Vector2( -54.1042, 5.70377 )
+scale = Vector2( 0.107563, 0.107113 )
+texture = ExtResource( 5 )
+
+[node name="TileGrassRoadCornerUl3" type="Sprite" parent="Background"]
+position = Vector2( -33.6672, -17.9682 )
+scale = Vector2( 0.107563, 0.107113 )
+texture = ExtResource( 6 )
+
+[node name="TileGrassRoadCornerLr3" type="Sprite" parent="Background"]
+position = Vector2( -33.6672, -24.7163 )
+scale = Vector2( 0.107563, 0.107113 )
+texture = ExtResource( 7 )
+
+[node name="TileGrassRoadCornerUl4" type="Sprite" parent="Background"]
+position = Vector2( -27.1059, -24.7163 )
+scale = Vector2( 0.107563, 0.107113 )
+texture = ExtResource( 6 )
+
+[node name="TileGrassRoadNorth5" type="Sprite" parent="Background"]
+position = Vector2( -27.1059, -31.4644 )
+scale = Vector2( 0.107563, 0.107113 )
+texture = ExtResource( 5 )
+
+[node name="TileGrassRoadCornerLl" type="Sprite" parent="Background"]
+position = Vector2( -47.2202, -24.9305 )
+scale = Vector2( 0.107563, 0.107113 )
+texture = ExtResource( 9 )
+
+[node name="TileGrassRoadCornerUr" type="Sprite" parent="Background"]
+position = Vector2( -53.5664, -25.0377 )
+scale = Vector2( 0.107563, 0.107113 )
+texture = ExtResource( 8 )
+
+[node name="TileGrassRoadCornerLr4" type="Sprite" parent="Background"]
+position = Vector2( -53.4588, -31.6787 )
+scale = Vector2( 0.107563, 0.107113 )
+texture = ExtResource( 7 )
+
+[node name="TileGrassRoadCornerUl5" type="Sprite" parent="Background"]
+position = Vector2( -47.6504, -31.5715 )
+scale = Vector2( 0.107563, 0.107113 )
+texture = ExtResource( 6 )
+
+[node name="TankBlue" type="Sprite" parent="Background"]
+position = Vector2( -53.9966, 6.23933 )
+rotation = -3.11378
+scale = Vector2( 0.0691474, 0.0688586 )
+texture = ExtResource( 10 )
+
+[node name="TankDark" type="Sprite" parent="Background"]
+position = Vector2( -51.8992, -25.4432 )
+rotation = -1.09086
+scale = Vector2( 0.0689197, 0.0690865 )
+texture = ExtResource( 11 )
+
+[node name="TankSand" type="Sprite" parent="Background"]
+position = Vector2( -28.5042, -25.2519 )
+rotation = 0.654218
+scale = Vector2( 0.063926, 0.0638576 )
+texture = ExtResource( 13 )
+
+[node name="TankRed" type="Sprite" parent="Background"]
+position = Vector2( -40.3361, -26.6444 )
+scale = Vector2( 0.0849182, 0.0845629 )
+texture = ExtResource( 12 )
+
+[node name="OilSpillLarge" type="Sprite" parent="Background"]
+position = Vector2( -60.4504, -15.1833 )
+scale = Vector2( 0.107563, 0.107113 )
+texture = ExtResource( 14 )
+
+[node name="OilSpillSmall" type="Sprite" parent="Background"]
+position = Vector2( -59.805, 0.133892 )
+scale = Vector2( 0.107563, 0.107113 )
+texture = ExtResource( 17 )
+
+[node name="TreeGreenTwigs" type="Sprite" parent="Background"]
+position = Vector2( -53.5664, -10.2561 )
+scale = Vector2( 0.107563, 0.107113 )
+texture = ExtResource( 18 )
+
+[node name="TreeGreenTwigs2" type="Sprite" parent="Background"]
+position = Vector2( -47.9731, -15.0762 )
+scale = Vector2( 0.107563, 0.107113 )
+texture = ExtResource( 18 )
+
+[node name="TreeBrownTwigs" type="Sprite" parent="Background"]
+position = Vector2( -38.0773, -7.47113 )
+scale = Vector2( 0.107563, 0.107113 )
+texture = ExtResource( 15 )
+
+[node name="WireStraight" type="Sprite" parent="Background"]
+position = Vector2( -60.8807, -26.7515 )
+scale = Vector2( 0.107563, 0.107113 )
+texture = ExtResource( 16 )
+
+[node name="WireCrooked" type="Sprite" parent="Background"]
+position = Vector2( -55.7176, -21.3958 )
+scale = Vector2( 0.107563, 0.107113 )
+texture = ExtResource( 19 )
+
+[node name="FenceYellow" type="Sprite" parent="Background"]
+position = Vector2( -18.0706, -28.7866 )
+scale = Vector2( 0.107563, 0.107113 )
+texture = ExtResource( 20 )
+
+[node name="FenceRed" type="Sprite" parent="Background"]
+position = Vector2( -12.1546, -28.7866 )
+scale = Vector2( 0.107563, 0.107113 )
+texture = ExtResource( 21 )
+
+[node name="CrateWood" type="Sprite" parent="Background"]
+position = Vector2( -18.1781, -25.5732 )
+scale = Vector2( 0.107563, 0.107113 )
+texture = ExtResource( 25 )
+
+[node name="CrateMetal" type="Sprite" parent="Background"]
+position = Vector2( -12.0471, -25.4661 )
+scale = Vector2( 0.107563, 0.107113 )
+texture = ExtResource( 26 )
+
+[node name="BarricadeWood" type="Sprite" parent="Background"]
+position = Vector2( -34.4202, -13.3623 )
+scale = Vector2( 0.107563, 0.107113 )
+texture = ExtResource( 22 )
+
+[node name="BarricadeMetal" type="Sprite" parent="Background"]
+position = Vector2( -14.9513, -21.2887 )
+scale = Vector2( 0.107563, 0.107113 )
+texture = ExtResource( 24 )
+
+[node name="BarrelRustTop" type="Sprite" parent="Background"]
+position = Vector2( -29.042, -20.1105 )
+scale = Vector2( 0.107563, 0.107113 )
+texture = ExtResource( 23 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 414.0
+margin_top = 267.0
+margin_right = 615.0
+margin_bottom = 281.0
+text = "Welcome to Tankie Terror!"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Play" type="Button" parent="."]
+margin_left = 462.0
+margin_top = 350.0
+margin_right = 562.0
+margin_bottom = 390.0
+text = "Play"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Quit" type="Button" parent="."]
+margin_left = 462.0
+margin_top = 400.0
+margin_right = 562.0
+margin_bottom = 440.0
+text = "Quit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Main Menu" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 27 )
+volume_db = -9.613
+autoplay = true
+
+[connection signal="pressed" from="Play" to="." method="_on_Play_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_Quit_pressed"]
