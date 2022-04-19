@@ -6,7 +6,12 @@ var score = 0
 var time = 100
 var lives = 10
 var level = -1
-
+var saveState = [null, null, null, null]
+var menu = true
+var current_level = 1
+var current_position = null
+const SAVE_PATH = "user://savegame.sav"
+const SECRET = "Venator"
 var levels = [
 	{
 		"title":"Level 1",
@@ -127,26 +132,24 @@ func next_level():
 		if Level_Label != null:
 			Level_Label.show_labels()
 	if level == 0:
-		get_node(Global.levels[Global.level]["music"]).play()
+		get_node(levels[level]["music"]).play()
 	else:
 		if level >= levels.size():
-			get_node(Global.levels[Global.level - 1]["music"]).stop()
+			get_node(levels[level - 1]["music"]).stop()
 		else:
-			get_node(Global.levels[Global.level - 1]["music"]).stop()
-			get_node(Global.levels[Global.level]["music"]).play()
+			get_node(levels[level - 1]["music"]).stop()
+			get_node(levels[level]["music"]).play()
 
 var save_data = {
 	"saves": {
 		"save0": {
 			"lives":10
-			,"jewels":0
 			,"saveState": null
 			,"level": get_node_or_null("res://Levels/Level1.tscn")
 			,"position": Vector2(200,200)
 		},
 		"save1": {
 			"lives": null
-			,"jewels": null
 			,"saveState": null
 			,"level": get_node_or_null("res://Levels/Level1.tscn")
 			,"position": Vector2(200,200)
@@ -154,7 +157,6 @@ var save_data = {
 		},
 		"save2": {
 			"lives": null
-			,"jewels": null
 			,"saveState": null
 			,"level": get_node_or_null("res://Levels/Level1.tscn")
 			,"position": Vector2(200,200)
@@ -162,7 +164,6 @@ var save_data = {
 		},
 		"save3": {
 			"lives": null
-			,"jewels": null
 			,"saveState": null
 			,"level": get_node_or_null("res://Levels/Level1.tscn")
 			,"position": Vector2(200,200)
@@ -174,7 +175,6 @@ var save_data = {
 func save_game(save):
 	save_data["saves"]["save" + str(save)] = {
 		"lives": lives
-		,"jewels": jewels
 		,"saveState": saveState[save]
 		,"level": current_level
 		,"position": var2str(current_position)
@@ -218,10 +218,8 @@ func load_game(save):
 	save_game.close()
 	
 	lives = save_data["saves"]["save" + str(save)]["lives"]
-	jewels = save_data["saves"]["save" + str(save)]["jewels"]
 	saveState[save] = save_data["saves"]["save" + str(save)]["saveState"]
 	current_position = str2var(save_data["saves"]["save" + str(save)]["position"])
-	jewelPositions = str2var(save_data["saves"]["save" + str(save)]["jewelPositions"])
 	var level = save_data["saves"]["save" + str(save)]["level"]
 	if save != 0:
 		current_level = level

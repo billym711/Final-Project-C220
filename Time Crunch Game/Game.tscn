@@ -133,6 +133,16 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Save" type="Button" parent="UI/Menu"]
+margin_left = 462.0
+margin_top = 300.0
+margin_right = 562.0
+margin_bottom = 340.0
+text = "Save/Load"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Quit" type="Button" parent="UI/Menu"]
 margin_left = 462.0
 margin_top = 400.0
@@ -197,6 +207,7 @@ volume_db = -9.613
 
 [connection signal="timeout" from="UI/HUD/Timer" to="UI/HUD" method="_on_Timer_timeout"]
 [connection signal="pressed" from="UI/Menu/Restart" to="UI/Menu" method="_on_Restart_pressed"]
+[connection signal="pressed" from="UI/Menu/Save" to="UI/Menu" method="_on_Save_pressed"]
 [connection signal="pressed" from="UI/Menu/Quit" to="Player_Container" method="_on_Quit_pressed"]
 [connection signal="pressed" from="UI/Menu/Quit" to="UI/Menu" method="_on_Quit_pressed"]
 [connection signal="timeout" from="UI/Level/Timer" to="UI/Level" method="_on_Timer_timeout"]
