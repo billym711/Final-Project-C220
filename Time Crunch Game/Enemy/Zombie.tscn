@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Assets/Zombie.png" type="Texture" id=1]
 [ext_resource path="res://Enemy/Zombie.gd" type="Script" id=2]
@@ -10,6 +10,9 @@ animations = [ {
 "name": "default",
 "speed": 5.0
 } ]
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 227.009
 
 [node name="Zombie" type="KinematicBody2D"]
 script = ExtResource( 2 )
@@ -33,6 +36,13 @@ enabled = true
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.5
 
+[node name="Range" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Range"]
+shape = SubResource( 2 )
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="body_entered" from="Range" to="." method="_on_Range_body_entered"]
+[connection signal="body_exited" from="Range" to="." method="_on_Range_body_exited"]

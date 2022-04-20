@@ -16,8 +16,11 @@ var current_position = starting_position
 const SAVE_PATH = "user://savegame.sav"
 const SECRET = "Venator"
 
+var canSave = true
+var zombieTarget = null
 
-func ready():
+
+func _ready():
 	load_saves()
 	pause_mode = Node.PAUSE_MODE_PROCESS
 	randomize()
