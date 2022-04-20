@@ -29,7 +29,7 @@ func _ready():
 func getInfo():
 	var time = OS.get_time()
 	var time_return = String(time.hour) +":"+String(time.minute)+":"+String(time.second)
-	return "Data Saved at " + time_return + ": \n-Level " + str(Global.current_level) + "\n   Lives: " + str(Global.lives)
+	return "Data Saved at " + time_return + ": \n-Level " + str(Global.current_level) + "\n   Health: " + str(Global.health) + "\n   Lives: " + str(Global.lives) + "\n   Score: " + str(Global.score)
 	
 func _on_Back_pressed():
 	var _scene = get_tree().change_scene("res://Levels/Level" + str(Global.current_level) + ".tscn")

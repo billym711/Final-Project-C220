@@ -587,3 +587,5 @@ navpoly = SubResource( 1 )
 [node name="Enemy_Container" type="Node2D" parent="."]
 position = Vector2( 11.478, 0 )
 script = ExtResource( 4 )
+
+[node name="Effects" type="Node2D" parent="."]

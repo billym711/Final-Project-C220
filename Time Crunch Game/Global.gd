@@ -5,6 +5,8 @@ var VP = Vector2.ZERO
 var score = 0
 var time = 100
 var lives = 10
+var health = 20
+
 var level = 1
 var saveState = [null, null, null, null]
 var menu = true
@@ -14,24 +16,37 @@ var current_position = starting_position
 const SAVE_PATH = "user://savegame.sav"
 const SECRET = "Venator"
 
-func _ready():
+
+func ready():
 	load_saves()
 	pause_mode = Node.PAUSE_MODE_PROCESS
 	randomize()
 	VP = get_viewport().size
 	var _signal = get_tree().get_root().connect("size_changed", self, "_resize")
+	score = 0
+	time = 100
+	lives = 10
+	health = 20
+	current_level = 1
+	current_position = starting_position
 
 func update_score(s):
 	score += s
-	var hud = get_node_or_null("/root/Game/UI/HUD")
+	var hud = get_node_or_null("/root/Level1/Camera/UI/HUD")
 	if hud != null:
 		hud.update_score()
+		
+func update_health(h):
+	health += h
+	var hud = get_node_or_null("/root/Level1/Camera/UI/HUD")
+	if hud != null:
+		hud.update_health()
 
 func update_lives(l):
 	lives += l
 	if lives <= 0:
 		var _scene = get_tree().change_scene("res://UI/End_Game.tscn")
-	var hud = get_node_or_null("/root/Game/UI/HUD")
+	var hud = get_node_or_null("/root/Level1/Camera/UI/HUD")
 	if hud != null:
 		hud.update_lives()
 
@@ -39,34 +54,46 @@ func update_time(t):
 	time += t
 	if time <= 0:
 		var _scene = get_tree().change_scene("res://UI/End_Game.tscn")
-	var hud = get_node_or_null("/root/Game/UI/HUD")
+	var hud = get_node_or_null("/root/Level1/Camera/UI/HUD")
 	if hud != null:
 		hud.update_time()
 
 var save_data = {
 	"saves": {
 		"save0": {
-			"lives":10
+			"health":20
+			,"lives":10
+			,"score":0
+			,"time":100
 			,"saveState": null
 			,"level": get_node_or_null("res://Levels/Level1.tscn")
 			,"position": Vector2(500, 500)
 		},
 		"save1": {
-			"lives": null
+			"health":20
+			,"lives": null
+			,"score":0
+			,"time":100
 			,"saveState": null
 			,"level": get_node_or_null("res://Levels/Level1.tscn")
 			,"position": Vector2(500, 500)
 
 		},
 		"save2": {
-			"lives": null
+			"health":20
+			,"lives": null
+			,"score":0
+			,"time":100
 			,"saveState": null
 			,"level": get_node_or_null("res://Levels/Level1.tscn")
 			,"position": Vector2(500, 500)
 
 		},
 		"save3": {
-			"lives": null
+			"health":20
+			,"lives": null
+			,"score":0
+			,"time":100
 			,"saveState": null
 			,"level": get_node_or_null("res://Levels/Level1.tscn")
 			,"position": Vector2(500, 500)
@@ -77,7 +104,10 @@ var save_data = {
 
 func save_game(save):
 	save_data["saves"]["save" + str(save)] = {
-		"lives": lives
+		"health": health
+		,"lives": lives
+		,"score": score
+		,"time": time
 		,"saveState": saveState[save]
 		,"level": current_level
 		,"position": var2str(current_position)
@@ -120,7 +150,10 @@ func load_game(save):
 		print("Error: ", result_json.error)
 	save_game.close()
 	
+	health = save_data["saves"]["save" + str(save)]["health"]
 	lives = save_data["saves"]["save" + str(save)]["lives"]
+	score = save_data["saves"]["save" + str(save)]["score"]
+	time = save_data["saves"]["save" + str(save)]["time"]
 	saveState[save] = save_data["saves"]["save" + str(save)]["saveState"]
 	current_position = str2var(save_data["saves"]["save" + str(save)]["position"])
 	var level = save_data["saves"]["save" + str(save)]["level"]

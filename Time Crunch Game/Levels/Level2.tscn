@@ -52,4 +52,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Effects" type="Node2D" parent="."]
+
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_Area2D_body_entered"]

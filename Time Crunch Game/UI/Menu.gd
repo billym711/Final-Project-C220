@@ -17,7 +17,7 @@ func _on_Restart_pressed():
 	var player = get_node_or_null("/root/Level" + str(Global.current_level) + "/Player_Container/Player");
 	if player != null:
 		player.position = Global.starting_position
-	Global.current_level = 1
+	Global.ready()
 
 func _on_Quit_pressed():
 	get_tree().quit()

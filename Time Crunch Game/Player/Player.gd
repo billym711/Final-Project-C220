@@ -5,10 +5,11 @@ var velocity = Vector2.ZERO
 var rotation_speed = 6.0
 var speed = 200.0
 var max_speed = 210.0
-var health = 20
+var health = Global.health
 
 var Effects = null
-var nose = Vector2(0,-60)
+var nose = Vector2(0,-30)
+
 
 func _physics_process(_delta):
 	velocity = velocity + get_input()*speed
@@ -19,7 +20,15 @@ func _physics_process(_delta):
 
 
 	if Input.is_action_just_pressed("shoot"):
-		var Effects = get_node_or_null("/root/Game/Effects")
+		var Effects = get_node_or_null("../../Effects")
+		var Bullet = load("res://Player/Bullet.tscn")
+		if Effects != null:
+			var bullet = Bullet.instance()
+			bullet.global_position = global_position + nose.rotated(rotation)
+			bullet.rotation = rotation
+			Effects.add_child(bullet)
+			$Player_Shot.play()
+			$Timer2.start()
 
 func get_input():
 	var to_return = Vector2.ZERO
@@ -37,8 +46,16 @@ func get_input():
 	
 func damage(d):
 	health -= d
+	Global.update_health(-1)
+	print(Global.health)
 	if health <= 0:
+		Global.current_position = Global.starting_position
 		Global.update_lives(-1)
+		Global.update_health(20)
 		queue_free()
 
 
+
+
+func _on_Timer2_timeout():
+	$Player_Shot.stop()

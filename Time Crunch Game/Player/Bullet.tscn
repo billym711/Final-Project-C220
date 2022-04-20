@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Player/Bullet.gd" type="Script" id=1]
 [ext_resource path="res://Assets/PNG/Default size/shotThin.png" type="Texture" id=2]
-[ext_resource path="res://Assets/Audio/laserSmall_004.ogg" type="AudioStream" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 12.0
@@ -27,13 +26,5 @@ autostart = true
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PoolVector2Array( 4, 13, -4, 13, -4, -13, 4, -13 )
 
-[node name="Player_Shot" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 3 )
-
-[node name="Timer2" type="Timer" parent="."]
-wait_time = 0.361
-one_shot = true
-
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
-[connection signal="timeout" from="Timer2" to="." method="_on_Timer2_timeout"]
