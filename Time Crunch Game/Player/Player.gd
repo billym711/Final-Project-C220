@@ -19,7 +19,6 @@ func _physics_process(_delta):
 	velocity = move_and_slide_with_snap(velocity, Vector2.ZERO)
 	velocity.x = lerp(velocity.x, 0, .5)
 	velocity.y = lerp(velocity.y, 0, .5)
-	position.x = wrapf(position.x, 0, Global.VP.x)
 
 
 	if Input.is_action_just_pressed("shoot"):
@@ -58,6 +57,3 @@ func damage(d):
 		queue_free()
 
 
-func _on_Area2D_body_entered(body):
-	if body.name != "Player":
-		damage(100)

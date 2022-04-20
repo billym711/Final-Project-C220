@@ -14,21 +14,22 @@ animations = [ {
 } ]
 
 [node name="Player" type="KinematicBody2D"]
-position = Vector2( 520, 310 )
+position = Vector2( 509, 311 )
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
-position = Vector2( -31.6352, 33.4707 )
+position = Vector2( -18, -6 )
 rotation = 3.14159
 scale = Vector2( 2.47721, 2.59191 )
 frames = SubResource( 1 )
 playing = true
+flip_v = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-position = Vector2( -12, 24 )
+position = Vector2( 2, 2 )
 scale = Vector2( 0.768601, 0.665761 )
 polygon = PoolVector2Array( 21, 17, 11.6, 23, -12.2, 23, -21, 18.2, -21, -23, 21, -23 )
 
@@ -36,7 +37,7 @@ polygon = PoolVector2Array( 21, 17, 11.6, 23, -12.2, 23, -21, 18.2, -21, -23, 21
 position = Vector2( 1, 1 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
-position = Vector2( -10.4212, 25.385 )
+position = Vector2( 2, 3.99999 )
 scale = Vector2( 1.38587, 1.30931 )
 polygon = PoolVector2Array( -13, -15, 10, -15, 10, 7, 6, 11, -8, 11, -12, 8, -13, 0 )
 
@@ -44,4 +45,5 @@ polygon = PoolVector2Array( -13, -15, 10, -15, 10, 7, 6, 11, -8, 11, -12, 8, -13
 stream = ExtResource( 4 )
 volume_db = -15.731
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
