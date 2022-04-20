@@ -5,6 +5,4 @@ func _on_Area2D_body_entered(body):
 	body.position = Global.current_position
 	var nextLevel = str(Global.current_level + 1)
 	var scene = get_tree().change_scene("res://Levels/Level" + nextLevel + ".tscn")
-	if scene:
-		print("e")
 	Global.current_level += 1

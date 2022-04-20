@@ -13,11 +13,6 @@ onready var Explosion = load("res://Effects/Explosion.tscn")
 onready var Bullet = load("res://Player/Bullet.tscn")
 var nose = Vector2(0,-60)
 
-
-
-func _ready():
-	pass
-
 func _physics_process(_delta):
 	velocity = velocity + get_input()*speed
 	velocity = velocity.normalized() * clamp(velocity.length(), 0, max_speed)
@@ -34,8 +29,6 @@ func _physics_process(_delta):
 			bullet.global_position = global_position + nose.rotated(rotation)
 			bullet.rotation = rotation
 			Effects.add_child(bullet)
-
-
 
 func get_input():
 	var to_return = Vector2.ZERO

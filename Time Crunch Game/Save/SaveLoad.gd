@@ -1,7 +1,5 @@
 extends Node2D
 
-
-
 func _ready():
 	if Global.saveState[1] == null:
 		$Slot1.hint_tooltip = "No Data Saved"
@@ -27,7 +25,6 @@ func _ready():
 		$Slot3.hint_tooltip = Global.saveState[3]
 		$Save3.disabled = false
 		$Delete3.disabled = false
-	
 
 func getInfo():
 	var time = OS.get_time()

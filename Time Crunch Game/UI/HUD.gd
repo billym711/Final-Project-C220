@@ -1,6 +1,5 @@
 extends Control
 
-
 func _ready():
 	Global.update_score(0)
 	Global.update_lives(0)
@@ -14,7 +13,6 @@ func update_time():
 
 func update_lives():
 	$Lives.text = "Lives: " + str(Global.lives)
-
 
 func _on_Timer_timeout():
 	Global.update_time(-1)
