@@ -2,6 +2,7 @@ extends KinematicBody2D
 
 var player = null
 onready var ray = $RayCast2D
+onready var nav = load("res://Levels/Level1.tscn")
 export var speed = 350
 export var looking_speed = 25
 var line_of_sight = false
@@ -17,27 +18,26 @@ func _ready():
 
 func _physics_process(_delta):
 	var velocity = Vector2.ZERO
-	print(get_node_or_null("/root/Game/Level1"))
-	player = get_node_or_null("/root/Levels/Level1/Player_Container")
-	if player != null:
-		ray.cast_to = ray.to_local(player.global_position)
-		var c = ray.get_collider()
-		line_of_sight = false
-		if c and c.name == "Player":
-			line_of_sight = true
-		points = get_node("/root/Levels/Level1/Navigation2D").get_simple_path(get_global_position(), player.global_position, true)
-		if points.size() > 1:
-			var distance = points[1] - get_global_position()
-			var direction = distance.normalized()
-			if distance.length() > margin or points.size() > 2:
-				if line_of_sight:
-					velocity = direction*speed
-				else:
-					velocity = direction*looking_speed
+	move_and_slide(Vector2(2,2))
+	ray.cast_to = ray.to_local(Global.current_position)
+	var c = ray.get_collider()
+	line_of_sight = false
+	if c and c.name == "Player":
+		line_of_sight = true
+	points = get_node("../../Navigation2D").get_simple_path(get_global_position(), Global.current_position, true)
+	if points.size() > 1:
+		var distance = points[1] - get_global_position()
+		var direction = distance.normalized()
+		if distance.length() > margin or points.size() > 2:
+			if line_of_sight:
+				velocity = direction*speed
 			else:
-				velocity = Vector2(0, 0)
-			move_and_slide(velocity, Vector2(0,0))
-		update()
+				velocity = direction*looking_speed
+		else:
+			velocity = Vector2(0, 0)
+		move_and_slide(velocity, Vector2(0,0))
+	update()
+
 
 func _draw():
 	var c = looking_color
@@ -52,6 +52,7 @@ func _draw():
 
 func _on_Area2D_body_entered(body):
 	if body.name == 'Player':
-		body.die()
 		queue_free()
+
+
 

@@ -1,16 +1,18 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Player/Player_Container.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Map Tiles/cidade_demo.png" type="Texture" id=2]
 [ext_resource path="res://Levels/Camera.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Enemy/Enemy_Container.gd" type="Script" id=4]
+[ext_resource path="res://Levels/Level1.gd" type="Script" id=5]
 
 [sub_resource type="NavigationPolygon" id=1]
-vertices = PoolVector2Array( -1026, -30, -1029, -41, 2058, -41, 2061, 977, -1029, 985 )
-polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 3, 4, 0 ) ]
-outlines = [ PoolVector2Array( -1026, -30, -1029, -41, 2058, -41, 2061, 977, -1029, 985 ) ]
+vertices = PoolVector2Array( -1024, 461, -1031, -41, 2057, -41, 2065, 978, -1020, 986 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 4, 0, 3 ) ]
+outlines = [ PoolVector2Array( -1024, 461, -1031, -41, 2057, -41, 2065, 978, -1020, 986 ) ]
 
 [node name="Level1" type="Node2D"]
+script = ExtResource( 5 )
 
 [node name="Camera" parent="." instance=ExtResource( 3 )]
 
@@ -583,4 +585,5 @@ script = ExtResource( 1 )
 navpoly = SubResource( 1 )
 
 [node name="Enemy_Container" type="Node2D" parent="."]
+position = Vector2( 11.478, 0 )
 script = ExtResource( 4 )
