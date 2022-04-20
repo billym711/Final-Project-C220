@@ -5,11 +5,12 @@ var VP = Vector2.ZERO
 var score = 0
 var time = 100
 var lives = 10
-var level = -1
+var level = 1
 var saveState = [null, null, null, null]
 var menu = true
 var current_level = 1
-var current_position = null
+var starting_position = Vector2(500, 500)
+var current_position = starting_position
 const SAVE_PATH = "user://savegame.sav"
 const SECRET = "Venator"
 var levels = [
@@ -71,8 +72,20 @@ var levels = [
 	}
 ]
 
+func _unhandled_input(event):
+	var Menu = get_node_or_null("/root/Game/UI/Menu")
+	if Menu != null:
+		if event.is_action_pressed("menu"):
+			if not Menu.visible:
+				#get_tree().paused = true
+				Menu.show()
+			else:
+				get_tree().paused = false
+				Menu.hide()
+
 
 func _ready():
+	load_saves()
 	pause_mode = Node.PAUSE_MODE_PROCESS
 	randomize()
 	VP = get_viewport().size
@@ -93,12 +106,15 @@ func reset():
 	score = 0
 	lives = 10
 	time = 100
-	level = -1
+	level = 1
 	for l in levels:
 		l["asteroids_spawned"] = false
 		l["enemies_spawned"] = false
 		l["enemies2_spawned"] = false
 		l["bosses_spawned"] = false
+		
+func resetPosition():
+	current_position = starting_position
 
 
 func update_score(s):
@@ -146,27 +162,27 @@ var save_data = {
 			"lives":10
 			,"saveState": null
 			,"level": get_node_or_null("res://Levels/Level1.tscn")
-			,"position": Vector2(200,200)
+			,"position": Vector2(500, 500)
 		},
 		"save1": {
 			"lives": null
 			,"saveState": null
 			,"level": get_node_or_null("res://Levels/Level1.tscn")
-			,"position": Vector2(200,200)
+			,"position": Vector2(500, 500)
 
 		},
 		"save2": {
 			"lives": null
 			,"saveState": null
 			,"level": get_node_or_null("res://Levels/Level1.tscn")
-			,"position": Vector2(200,200)
+			,"position": Vector2(500, 500)
 
 		},
 		"save3": {
 			"lives": null
 			,"saveState": null
 			,"level": get_node_or_null("res://Levels/Level1.tscn")
-			,"position": Vector2(200,200)
+			,"position": Vector2(500, 500)
 
 		}
 	}
@@ -223,7 +239,7 @@ func load_game(save):
 	var level = save_data["saves"]["save" + str(save)]["level"]
 	if save != 0:
 		current_level = level
-		var _scene = get_tree().change_scene("res://Levels/" + str(level))
+		var _scene = get_tree().change_scene("res://Levels/Level" + str(level) + ".tscn")
 		
 	#call_deferred("restart_level")
 	

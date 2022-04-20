@@ -1,0 +1,55 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Player/Player_Container.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Map Tiles/cidade_demo.png" type="Texture" id=2]
+[ext_resource path="res://Levels/ExitTest.gd" type="Script" id=3]
+[ext_resource path="res://Levels/Camera.tscn" type="PackedScene" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 64.5, 64 )
+
+[node name="Level2" type="Node2D"]
+
+[node name="Camera" parent="." instance=ExtResource( 4 )]
+
+[node name="Background" type="Node2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="Background"]
+position = Vector2( 514.75, 467.894 )
+rotation = 1.5708
+scale = Vector2( 1.28723, 1.28723 )
+texture = ExtResource( 2 )
+
+[node name="Sprite2" type="Sprite" parent="Background"]
+position = Vector2( 1544, 467 )
+scale = Vector2( 1.28723, 1.28723 )
+texture = ExtResource( 2 )
+flip_h = true
+
+[node name="Sprite3" type="Sprite" parent="Background"]
+position = Vector2( -516, 467 )
+scale = Vector2( 1.28723, 1.28723 )
+texture = ExtResource( 2 )
+flip_h = true
+
+[node name="Player_Container" type="Node2D" parent="."]
+script = ExtResource( 1 )
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 706.5, 232 )
+shape = SubResource( 1 )
+
+[node name="Label" type="Label" parent="Area2D"]
+margin_left = 648.0
+margin_top = 228.0
+margin_right = 769.0
+margin_bottom = 242.0
+text = "Portal to next level"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="area_entered" from="Area2D" to="Area2D" method="_on_Area2D_area_entered"]
