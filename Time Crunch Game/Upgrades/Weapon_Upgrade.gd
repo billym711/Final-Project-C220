@@ -19,4 +19,5 @@ func _ready():
 func _on_Area2D_body_entered(body):
 	if body.name == "Player":
 		Global.damage_upgrades += 1
+		Global.update_weapon_upgrades(1)
 		queue_free()

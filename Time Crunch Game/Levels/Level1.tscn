@@ -584,13 +584,109 @@ polygon = PoolVector2Array( -114.976, -152.265, -73.025, -160.034, -72.2481, -12
 position = Vector2( -284.914, -110.232 )
 polygon = PoolVector2Array( -114.976, -152.265, -97.8846, -149.934, -92.4465, 87.0085, -114.199, 98.6615 )
 
+[node name="Sprite4" type="Sprite" parent="Background"]
+modulate = Color( 0.278431, 0.313726, 0.341176, 1 )
+position = Vector2( 514.998, 1497.89 )
+scale = Vector2( 1.28723, 1.28723 )
+texture = ExtResource( 2 )
+
+[node name="Sprite5" type="Sprite" parent="Background"]
+modulate = Color( 0.278431, 0.313726, 0.341176, 1 )
+position = Vector2( -511.752, 1498 )
+scale = Vector2( 1.28723, 1.28723 )
+texture = ExtResource( 2 )
+
+[node name="Sprite6" type="Sprite" parent="Background"]
+modulate = Color( 0.278431, 0.313726, 0.341176, 1 )
+position = Vector2( 1542.25, 1498 )
+scale = Vector2( 1.28723, 1.28723 )
+texture = ExtResource( 2 )
+
+[node name="Sprite7" type="Sprite" parent="Background"]
+modulate = Color( 0.278431, 0.313726, 0.341176, 1 )
+position = Vector2( 2568, 476 )
+scale = Vector2( 1.28723, 1.28723 )
+texture = ExtResource( 2 )
+
+[node name="Sprite8" type="Sprite" parent="Background"]
+modulate = Color( 0.278431, 0.313726, 0.341176, 1 )
+position = Vector2( 2568, 1498 )
+scale = Vector2( 1.28723, 1.28723 )
+texture = ExtResource( 2 )
+
+[node name="Sprite9" type="Sprite" parent="Background"]
+modulate = Color( 0.278431, 0.313726, 0.341176, 1 )
+position = Vector2( 514.998, -561.216 )
+scale = Vector2( 1.28723, 1.28723 )
+texture = ExtResource( 2 )
+
+[node name="Sprite10" type="Sprite" parent="Background"]
+modulate = Color( 0.278431, 0.313726, 0.341176, 1 )
+position = Vector2( -511.752, -561.11 )
+scale = Vector2( 1.28723, 1.28723 )
+texture = ExtResource( 2 )
+
+[node name="Sprite11" type="Sprite" parent="Background"]
+modulate = Color( 0.278431, 0.313726, 0.341176, 1 )
+position = Vector2( 1542.25, -561.11 )
+scale = Vector2( 1.28723, 1.28723 )
+texture = ExtResource( 2 )
+
+[node name="Sprite12" type="Sprite" parent="Background"]
+modulate = Color( 0.278431, 0.313726, 0.341176, 1 )
+position = Vector2( -1535, 503 )
+scale = Vector2( 1.28723, 1.28723 )
+texture = ExtResource( 2 )
+
+[node name="Sprite14" type="Sprite" parent="Background"]
+modulate = Color( 0.278431, 0.313726, 0.341176, 1 )
+position = Vector2( -1539, 1508 )
+scale = Vector2( 1.28723, 1.28723 )
+texture = ExtResource( 2 )
+
+[node name="Sprite15" type="Sprite" parent="Background"]
+modulate = Color( 0.278431, 0.313726, 0.341176, 1 )
+position = Vector2( -1534, -521 )
+scale = Vector2( 1.28723, 1.28723 )
+texture = ExtResource( 2 )
+
+[node name="Sprite13" type="Sprite" parent="Background"]
+modulate = Color( 0.278431, 0.313726, 0.341176, 1 )
+position = Vector2( 2568, -561.108 )
+scale = Vector2( 1.28723, 1.28723 )
+texture = ExtResource( 2 )
+
+[node name="Wall" type="Node2D" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Wall"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Wall/StaticBody2D"]
+build_mode = 1
+polygon = PoolVector2Array( -997, -56, 2060, -79, 2058, -43, -1038, -36 )
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Wall/StaticBody2D"]
+position = Vector2( -12, 1040 )
+build_mode = 1
+polygon = PoolVector2Array( -997, -56, 2060, -79, 2058, -43, -1038, -36 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Wall/StaticBody2D"]
+position = Vector2( -1074, 964 )
+rotation = 1.5708
+build_mode = 1
+polygon = PoolVector2Array( -997, -56, 36, -59.0001, 45, -33, -1038, -36 )
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Wall/StaticBody2D"]
+position = Vector2( 2018, 954 )
+rotation = 1.5708
+build_mode = 1
+polygon = PoolVector2Array( -997, -56, 36, -59.0001, 45, -33, -1038, -36 )
+
 [node name="Player_Container" type="Node2D" parent="."]
 script = ExtResource( 1 )
 
 [node name="Navigation2D" type="Navigation2D" parent="."]
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="Navigation2D"]
-visible = false
 navpoly = SubResource( 1 )
 
 [node name="Enemy_Container" type="Node2D" parent="."]
@@ -609,12 +705,22 @@ position = Vector2( 169.522, 309 )
 position = Vector2( 2215, 921 )
 
 [node name="Health" parent="." instance=ExtResource( 8 )]
-position = Vector2( 654, 71 )
+position = Vector2( 1336, 437 )
+
+[node name="Health2" parent="." instance=ExtResource( 8 )]
+position = Vector2( 1493, 829 )
+
+[node name="Health3" parent="." instance=ExtResource( 8 )]
+position = Vector2( 1571, 73 )
 
 [node name="Weapon_Upgrade" parent="." instance=ExtResource( 9 )]
-position = Vector2( 547, 73 )
+position = Vector2( 309, 442 )
+
+[node name="Weapon_Upgrade2" parent="." instance=ExtResource( 9 )]
+position = Vector2( -716, 444 )
 
 [node name="Camera" parent="." instance=ExtResource( 3 )]
+limit_bottom = 800
 
 [node name="Tween" type="Tween" parent="."]
 

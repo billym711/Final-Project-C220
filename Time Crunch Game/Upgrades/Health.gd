@@ -18,5 +18,6 @@ func _ready():
 
 func _on_Area2D_body_entered(body):
 	if body.name == "Player":
-		Global.armor += 1
+		Global.armor += 5
+		Global.update_armor(5)
 		queue_free()

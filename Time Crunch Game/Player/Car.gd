@@ -33,12 +33,14 @@ func next():
 	if get_tree().get_current_scene().get_name() == "Level3":
 		Global.damage += Global.damage_upgrades
 		Global.update_health(Global.armor)
-		Global.update_time(99999999999999999)
+		Global.update_time(100)
 		$Area2D.monitoring = false
 		return
 		#var scene = get_tree().change_scene("res://UI/End_Game.tscn")
 	Global.damage += Global.damage_upgrades
-	Global.health += Global.armor
+	Global.update_health(Global.armor)
+	Global.damage_upgrades = 0
+	Global.armor = 0
 	Global.current_level += 1
-	Global.time = 100
+	Global.time = 60
 	Global.current_position = Global.starting_position

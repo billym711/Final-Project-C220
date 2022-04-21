@@ -3,8 +3,8 @@ extends Node
 var VP = Vector2.ZERO
 
 var score = 0
-var time = 100
-var lives = 10
+var time = 60
+var lives = 1
 var health = 20
 var damage = 1
 var armor = 0
@@ -29,8 +29,8 @@ func _ready():
 	VP = get_viewport().size
 	var _signal = get_tree().get_root().connect("size_changed", self, "_resize")
 	score = 0
-	time = 100
-	lives = 10
+	time = 60
+	lives = 1
 	health = 20
 	damage = 1
 	armor = 0
@@ -61,10 +61,43 @@ func update_lives(l):
 	if hud != null:
 		hud.update_lives()
 
+func update_damage(s):
+	score += s
+	var nextLevel = str(Global.current_level)
+	var hud = get_node_or_null("/root/Level" + nextLevel + "/Camera/UI/HUD")
+	if hud != null:
+		hud.update_damage()
+		
+func update_armor(s):
+	score += s
+	var nextLevel = str(Global.current_level)
+	var hud = get_node_or_null("/root/Level" + nextLevel + "/Camera/UI/HUD")
+	if hud != null:
+		hud.update_armor()
+		
+func update_weapon_upgrades(s):
+	score += s
+	var nextLevel = str(Global.current_level)
+	var hud = get_node_or_null("/root/Level" + nextLevel + "/Camera/UI/HUD")
+	if hud != null:
+		hud.update_weapon_upgrade()
 func update_time(t):
 	time += t
 	if time <= 0:
-		var _scene = get_tree().change_scene("res://UI/End_Game.tscn")
+		if get_tree().get_current_scene().get_name() == "Level1":
+			var scene = get_tree().change_scene("res://Levels/Level2.tscn")
+		if get_tree().get_current_scene().get_name() == "Level2":
+			var scene = get_tree().change_scene("res://Levels/Level3.tscn")
+		if get_tree().get_current_scene().get_name() == "Level3":
+			Global.damage += Global.damage_upgrades
+			Global.update_health(Global.armor)
+			Global.update_time(100)
+			$Area2D.monitoring = false
+			return
+			#var scene = get_tree().change_scene("res://UI/End_Game.tscn")
+		Global.current_level += 1
+		Global.time = 30
+		Global.current_position = Global.starting_position
 	var nextLevel = str(Global.current_level)
 	var hud = get_node_or_null("/root/Level" + nextLevel + "/Camera/UI/HUD")
 	if hud != null:
@@ -74,7 +107,7 @@ var save_data = {
 	"saves": {
 		"save0": {
 			"health":20
-			,"lives":10
+			,"lives":1
 			,"score":0
 			,"time":100
 			,"saveState": null
