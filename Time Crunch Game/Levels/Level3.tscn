@@ -48,6 +48,16 @@ polygon = PoolVector2Array( -997, -56, 36, -59.0001, 45, -33, -1038, -36 )
 
 [node name="Background" type="Node2D" parent="."]
 
+[node name="ColorRect" type="ColorRect" parent="Background"]
+margin_left = -1989.0
+margin_top = -797.0
+margin_right = 3025.0
+margin_bottom = 1828.0
+color = Color( 0.352941, 0.14902, 0.0313726, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Sprite" type="Sprite" parent="Background"]
 modulate = Color( 0.466667, 0.168627, 0.168627, 1 )
 position = Vector2( 514.75, 467.894 )
@@ -640,6 +650,7 @@ script = ExtResource( 2 )
 position = Vector2( 2314, 932 )
 
 [node name="Navigation2D" type="Navigation2D" parent="."]
+visible = false
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="Navigation2D"]
 navpoly = SubResource( 1 )
