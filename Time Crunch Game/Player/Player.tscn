@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Assets/Soldier.png" type="Texture" id=1]
-[ext_resource path="res://Assets/Audio/laserSmall_004.ogg" type="AudioStream" id=2]
+[ext_resource path="res://Assets/Audio/shots.wav" type="AudioStream" id=2]
 [ext_resource path="res://Player/Player.gd" type="Script" id=3]
 [ext_resource path="res://Assets/Audio/spaceEngineSmall_001.ogg" type="AudioStream" id=4]
 [ext_resource path="res://Assets/Soldier_1.png" type="Texture" id=5]
