@@ -47,7 +47,7 @@ polygon = PoolVector2Array( -9.38037, -11.4564, 7.93726, -11.4564, 10.8235, -0.7
 
 [node name="Engine" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
-volume_db = -5.0
+volume_db = 10.731
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true

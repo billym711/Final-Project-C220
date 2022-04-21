@@ -17,6 +17,7 @@ func driveOut():
 		
 	var wave = load("res://Enemy/FinalWave.tscn")
 	add_child(wave.instance())
+	$Music.stop()
 
 
 func _on_Timer_timeout():

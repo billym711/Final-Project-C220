@@ -21,9 +21,8 @@ func _ready():
 	#position = Vector2(20,100)
 
 func _physics_process(_delta):
-	#$Range/CollisionShape2D.scale.x = Global.zombieRange * Global.multiplier
-	#$Range/CollisionShape2D.scale.y = Global.zombieRange * Global.multiplier
-	
+	$Range/CollisionShape2D.shape.radius = (600 - (Global.time/Global.current_level * 8)) + Global.zombieRangeBonus
+
 	var velocity = Vector2.ZERO
 	if target != null or Global.zombieTarget != null:
 		Global.canSave = false

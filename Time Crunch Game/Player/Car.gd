@@ -34,7 +34,7 @@ func next():
 		Global.damage += Global.damage_upgrades
 		Global.update_health(Global.armor)
 		Global.update_time(100)
-		$Area2D.monitoring = false
+		Global.zombieRangeBonus = 200
 		return
 		#var scene = get_tree().change_scene("res://UI/End_Game.tscn")
 	Global.damage += Global.damage_upgrades

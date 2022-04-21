@@ -721,6 +721,7 @@ position = Vector2( 309, 442 )
 position = Vector2( -716, 444 )
 
 [node name="Camera" parent="." instance=ExtResource( 3 )]
+current = false
 limit_bottom = 800
 
 [node name="Tween" type="Tween" parent="."]
@@ -735,7 +736,6 @@ autostart = true
 [node name="Node2D" parent="." instance=ExtResource( 11 )]
 position = Vector2( 470, -36 )
 rotation = 4.26209
-scale = Vector2( 1.5, 1.5 )
 
 [node name="StaticBody2D" parent="." instance=ExtResource( 10 )]
 position = Vector2( -67, 744 )
@@ -745,7 +745,6 @@ scale = Vector2( 1.5, 1.5 )
 [node name="Node2D2" parent="." instance=ExtResource( 12 )]
 position = Vector2( 1489, 541 )
 rotation = -1.85703
-scale = Vector2( 1.8, 1.8 )
 
 [node name="Music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 13 )

@@ -12,7 +12,7 @@ animations = [ {
 } ]
 
 [sub_resource type="CircleShape2D" id=2]
-radius = 227.009
+radius = 200.0
 
 [node name="Zombie" type="KinematicBody2D"]
 script = ExtResource( 2 )
@@ -37,7 +37,6 @@ enabled = true
 wait_time = 0.5
 
 [node name="Range" type="Area2D" parent="."]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Range"]
 shape = SubResource( 2 )

@@ -6,6 +6,7 @@
 extents = Vector2( 7.75, 15.25 )
 
 [node name="StaticBody2D" type="StaticBody2D"]
+scale = Vector2( 1.5, 1.5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -0.25, -1.25 )

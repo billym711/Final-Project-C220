@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Player/Player_Container.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Map Tiles/cidade_demo3.png" type="Texture" id=2]
@@ -11,6 +11,8 @@
 [ext_resource path="res://Upgrades/Health.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Upgrades/Weapon_Upgrade.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Assets/Untitledgamefull2.wav" type="AudioStream" id=11]
+[ext_resource path="res://Levels/Van.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Levels/Blue_Car.tscn" type="PackedScene" id=13]
 
 [sub_resource type="NavigationPolygon" id=1]
 vertices = PoolVector2Array( 79, 527, 79, -46, 1537, -41, 1516, 1580, 83, 1574 )
@@ -841,6 +843,13 @@ position = Vector2( 1483, 1531 )
 stream = ExtResource( 11 )
 volume_db = 0.875
 autoplay = true
+
+[node name="StaticBody2D" parent="." instance=ExtResource( 13 )]
+position = Vector2( 837, 1556 )
+rotation = 1.09258
+
+[node name="Node2D" parent="StaticBody2D" instance=ExtResource( 12 )]
+position = Vector2( -88.8306, 80.107 )
 
 [connection signal="tween_completed" from="Tween2" to="." method="_on_Tween2_tween_completed"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

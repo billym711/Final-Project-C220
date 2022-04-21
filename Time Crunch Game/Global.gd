@@ -20,6 +20,7 @@ const SECRET = "Venator"
 
 var canSave = true
 var zombieTarget = null
+var zombieRangeBonus = 0
 
 
 func _ready():
@@ -92,7 +93,7 @@ func update_time(t):
 			Global.damage += Global.damage_upgrades
 			Global.update_health(Global.armor)
 			Global.update_time(100)
-			$Area2D.monitoring = false
+			#$Area2D.monitoring = false
 			return
 			#var scene = get_tree().change_scene("res://UI/End_Game.tscn")
 		Global.current_level += 1
