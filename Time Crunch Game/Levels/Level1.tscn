@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Player/Player_Container.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Map Tiles/cidade_demo.png" type="Texture" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://Levels/Blue_Car.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Levels/Red_Car.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Levels/Van.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Assets/Untitledgamefull2.wav" type="AudioStream" id=13]
 
 [sub_resource type="NavigationPolygon" id=1]
 vertices = PoolVector2Array( -1024, 461, -1031, -41, 2057, -41, 2065, 978, -1020, 986 )
@@ -745,6 +746,11 @@ scale = Vector2( 1.5, 1.5 )
 position = Vector2( 1489, 541 )
 rotation = -1.85703
 scale = Vector2( 1.8, 1.8 )
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 13 )
+volume_db = 0.875
+autoplay = true
 
 [connection signal="tween_completed" from="Tween2" to="." method="_on_Tween2_tween_completed"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

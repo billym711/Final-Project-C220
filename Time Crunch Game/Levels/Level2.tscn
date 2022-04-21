@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Player/Player_Container.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Map Tiles/cidade_demo3.png" type="Texture" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Assets/Map Tiles/cidade_demo4.png" type="Texture" id=8]
 [ext_resource path="res://Upgrades/Health.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Upgrades/Weapon_Upgrade.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Assets/Untitledgamefull2.wav" type="AudioStream" id=11]
 
 [sub_resource type="NavigationPolygon" id=1]
 vertices = PoolVector2Array( 79, 527, 79, -46, 1537, -41, 1516, 1580, 83, 1574 )
@@ -835,6 +836,11 @@ position = Vector2( 477, 1531 )
 
 [node name="Weapon_Upgrade2" parent="." instance=ExtResource( 10 )]
 position = Vector2( 1483, 1531 )
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 11 )
+volume_db = 0.875
+autoplay = true
 
 [connection signal="tween_completed" from="Tween2" to="." method="_on_Tween2_tween_completed"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
