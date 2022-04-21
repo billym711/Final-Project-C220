@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://UI/Main_Menu.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Map Tiles/cidade_demo2.png" type="Texture" id=2]
-[ext_resource path="res://Assets/Audio/Music/Sax jingles/Map.wav" type="AudioStream" id=27]
 
 [node name="Main_Menu" type="Control"]
 anchor_right = 1.0
@@ -21,6 +20,7 @@ position = Vector2( 893, 297.75 )
 scale = Vector2( 9.29688, 9.33594 )
 
 [node name="BarrelRustTop" type="Sprite" parent="Background"]
+modulate = Color( 0.447059, 0.384314, 0.384314, 1 )
 position = Vector2( -40.8784, -8.64936 )
 scale = Vector2( 0.170419, 0.169706 )
 texture = ExtResource( 2 )
@@ -55,11 +55,6 @@ text = "Quit"
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="Main Menu" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 27 )
-volume_db = -9.613
-autoplay = true
 
 [connection signal="pressed" from="Play" to="." method="_on_Play_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_Quit_pressed"]

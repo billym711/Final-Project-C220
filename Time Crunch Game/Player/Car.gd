@@ -19,6 +19,10 @@ func _ready():
 
 func _on_Area2D_body_entered(body):
 	if body.name == "Player":
-		var nextLevel = str(Global.current_level + 1)
-		var scene = get_tree().change_scene("res://Levels/Level" + nextLevel + ".tscn")
-		Global.current_level += 1
+		print(get_tree().get_current_scene().get_name())
+		if get_tree().get_current_scene().get_name() == "Level1":
+			var scene = get_tree().change_scene("res://Levels/Level2.tscn")
+		if get_tree().get_current_scene().get_name() == "Level2":
+			var scene = get_tree().change_scene("res://Levels/Level3.tscn")
+		if get_tree().get_current_scene().get_name() == "Level3":
+			var scene = get_tree().change_scene("res://UI/End_Game.tscn")

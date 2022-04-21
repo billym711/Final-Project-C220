@@ -21,6 +21,7 @@ script = ExtResource( 5 )
 [node name="Background" type="Node2D" parent="."]
 
 [node name="Sprite" type="Sprite" parent="Background"]
+modulate = Color( 0.278431, 0.313726, 0.341176, 1 )
 position = Vector2( 514.75, 467.894 )
 scale = Vector2( 1.28723, 1.28723 )
 texture = ExtResource( 2 )
@@ -207,6 +208,7 @@ position = Vector2( -284.914, -110.232 )
 polygon = PoolVector2Array( -114.976, -152.265, -97.8846, -149.934, -92.4465, 87.0085, -114.199, 98.6615 )
 
 [node name="Sprite2" type="Sprite" parent="Background"]
+modulate = Color( 0.278431, 0.313726, 0.341176, 1 )
 position = Vector2( -517, 473 )
 scale = Vector2( 1.28723, 1.28723 )
 texture = ExtResource( 2 )
@@ -393,6 +395,7 @@ position = Vector2( -284.914, -110.232 )
 polygon = PoolVector2Array( -114.976, -152.265, -97.8846, -149.934, -92.4465, 87.0085, -114.199, 98.6615 )
 
 [node name="Sprite3" type="Sprite" parent="Background"]
+modulate = Color( 0.278431, 0.313726, 0.341176, 1 )
 position = Vector2( 1546, 469 )
 scale = Vector2( 1.28723, 1.28723 )
 texture = ExtResource( 2 )
@@ -582,6 +585,7 @@ polygon = PoolVector2Array( -114.976, -152.265, -97.8846, -149.934, -92.4465, 87
 script = ExtResource( 1 )
 
 [node name="Navigation2D" type="Navigation2D" parent="."]
+visible = false
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="Navigation2D"]
 navpoly = SubResource( 1 )

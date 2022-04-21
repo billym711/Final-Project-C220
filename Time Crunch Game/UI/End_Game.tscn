@@ -17,6 +17,7 @@ position = Vector2( 893, 297.75 )
 scale = Vector2( 9.29688, 9.33594 )
 
 [node name="BarrelRustTop" type="Sprite" parent="Background"]
+modulate = Color( 0.337255, 0.356863, 0.282353, 1 )
 position = Vector2( -40.7664, 9.66693 )
 scale = Vector2( 0.170861, 0.170147 )
 texture = ExtResource( 2 )
@@ -26,6 +27,9 @@ margin_left = 386.0
 margin_top = 273.0
 margin_right = 587.0
 margin_bottom = 287.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Play again\?" type="Button" parent="."]
 margin_left = 462.0
