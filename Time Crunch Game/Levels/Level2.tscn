@@ -1,11 +1,20 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Player/Player_Container.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Map Tiles/cidade_demo.png" type="Texture" id=2]
+[ext_resource path="res://Levels/Level2.gd" type="Script" id=3]
 [ext_resource path="res://Levels/Camera.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Player/Car.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Enemy/Zombie.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Enemy/Enemy_Container.gd" type="Script" id=7]
+
+[sub_resource type="NavigationPolygon" id=1]
+vertices = PoolVector2Array( -1024, 461, -1031, -41, 2057, -41, 2065, 978, -1020, 986 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 4, 0, 3 ) ]
+outlines = [ PoolVector2Array( -1024, 461, -1031, -41, 2057, -41, 2065, 978, -1020, 986 ) ]
 
 [node name="Level2" type="Node2D"]
+script = ExtResource( 3 )
 
 [node name="Camera" parent="." instance=ExtResource( 4 )]
 
@@ -586,3 +595,18 @@ script = ExtResource( 1 )
 
 [node name="Car" parent="." instance=ExtResource( 5 )]
 position = Vector2( 631, 59 )
+
+[node name="Navigation2D" type="Navigation2D" parent="."]
+
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="Navigation2D"]
+navpoly = SubResource( 1 )
+
+[node name="Enemy_Container" type="Node2D" parent="."]
+position = Vector2( 11.478, 0 )
+script = ExtResource( 7 )
+
+[node name="Zombie" parent="Enemy_Container" instance=ExtResource( 6 )]
+position = Vector2( 109.522, 372 )
+
+[node name="Zombie2" parent="Enemy_Container" instance=ExtResource( 6 )]
+position = Vector2( 169.522, 309 )

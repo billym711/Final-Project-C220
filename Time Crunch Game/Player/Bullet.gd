@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 var velocity = Vector2.ZERO
 var speed = 500.0
-var damage = 1
+var damage = Global.damage
 
 onready var Explosion = load("res://Effects/Explosion.tscn")
 var Effects = null

@@ -6,7 +6,9 @@ var score = 0
 var time = 100
 var lives = 10
 var health = 20
-
+var damage = 1
+var armor = 0
+var damage_upgrades = 0
 var level = 1
 var saveState = [null, null, null, null]
 var menu = true
@@ -35,13 +37,15 @@ func _ready():
 
 func update_score(s):
 	score += s
-	var hud = get_node_or_null("/root/Level1/Camera/UI/HUD")
+	var nextLevel = str(Global.current_level + 1)
+	var hud = get_node_or_null("/root/Level" + nextLevel + "/Camera/UI/HUD")
 	if hud != null:
 		hud.update_score()
 		
 func update_health(h):
 	health += h
-	var hud = get_node_or_null("/root/Level1/Camera/UI/HUD")
+	var nextLevel = str(Global.current_level + 1)
+	var hud = get_node_or_null("/root/Level" + nextLevel + "/Camera/UI/HUD")
 	if hud != null:
 		hud.update_health()
 
@@ -49,7 +53,8 @@ func update_lives(l):
 	lives += l
 	if lives <= 0:
 		var _scene = get_tree().change_scene("res://UI/End_Game.tscn")
-	var hud = get_node_or_null("/root/Level1/Camera/UI/HUD")
+	var nextLevel = str(Global.current_level + 1)
+	var hud = get_node_or_null("/root/Level" + nextLevel + "/Camera/UI/HUD")
 	if hud != null:
 		hud.update_lives()
 
@@ -57,7 +62,8 @@ func update_time(t):
 	time += t
 	if time <= 0:
 		var _scene = get_tree().change_scene("res://UI/End_Game.tscn")
-	var hud = get_node_or_null("/root/Level1/Camera/UI/HUD")
+	var nextLevel = str(Global.current_level + 1)
+	var hud = get_node_or_null("/root/Level" + nextLevel + "/Camera/UI/HUD")
 	if hud != null:
 		hud.update_time()
 

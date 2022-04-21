@@ -26,3 +26,5 @@ func _on_Area2D_body_entered(body):
 			var scene = get_tree().change_scene("res://Levels/Level3.tscn")
 		if get_tree().get_current_scene().get_name() == "Level3":
 			var scene = get_tree().change_scene("res://UI/End_Game.tscn")
+		Global.damage += Global.damage_upgrades
+		Global.health += Global.armor
