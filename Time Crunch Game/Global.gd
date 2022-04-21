@@ -96,7 +96,7 @@ func update_time(t):
 			return
 			#var scene = get_tree().change_scene("res://UI/End_Game.tscn")
 		Global.current_level += 1
-		Global.time = 30
+		Global.time = 60
 		Global.current_position = Global.starting_position
 	var nextLevel = str(Global.current_level)
 	var hud = get_node_or_null("/root/Level" + nextLevel + "/Camera/UI/HUD")
