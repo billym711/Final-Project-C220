@@ -32,6 +32,9 @@ func _ready():
 	time = 100
 	lives = 10
 	health = 20
+	damage = 1
+	armor = 0
+	damage_upgrades = 0
 	current_level = 1
 	current_position = starting_position
 
