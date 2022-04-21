@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Player/Player_Container.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Map Tiles/cidade_demo.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Enemy/Enemy_Container.gd" type="Script" id=4]
 [ext_resource path="res://Levels/Level1.gd" type="Script" id=5]
 [ext_resource path="res://Enemy/Zombie.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Player/Car.tscn" type="PackedScene" id=7]
 
 [sub_resource type="NavigationPolygon" id=1]
 vertices = PoolVector2Array( -1024, 461, -1031, -41, 2057, -41, 2065, 978, -1020, 986 )
@@ -596,3 +597,6 @@ position = Vector2( 109.522, 372 )
 position = Vector2( 169.522, 309 )
 
 [node name="Effects" type="Node2D" parent="."]
+
+[node name="Car" parent="." instance=ExtResource( 7 )]
+position = Vector2( 466, -4 )
