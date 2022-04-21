@@ -68,3 +68,8 @@ func _on_Timer2_timeout():
 func _on_Timer_timeout():
 	Global.zombieTarget = null
 	Global.canSave = true
+
+
+func _on_Engine_finished():
+	if Input.is_action_pressed("forward"):
+		$Engine.play()
