@@ -1,16 +1,24 @@
 extends Node2D
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+onready var tween = get_node("Tween")
+
+func driveIn():
+	tween = get_node_or_null("Tween")
+	if tween != null:
+		tween.interpolate_property($Car, "position",$Car.position, Vector2(800, $Car.position.y), 5,Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+		tween.start()
+		
+func driveOut():
+	tween = get_node_or_null("Tween2")
+	if tween != null:
+		tween.interpolate_property($Car, "position",$Car.position, Vector2($Car.position.x-1000, $Car.position.y), 5,Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+		tween.start()
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+func _on_Timer_timeout():
+	driveIn()
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _on_Tween2_tween_completed(object, key):
+	$Car.next()

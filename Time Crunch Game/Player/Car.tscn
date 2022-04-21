@@ -4,6 +4,7 @@
 [ext_resource path="res://Player/Car.gd" type="Script" id=2]
 
 [node name="Car" type="KinematicBody2D"]
+scale = Vector2( 0.6, 0.6 )
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]

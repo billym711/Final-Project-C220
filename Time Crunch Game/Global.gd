@@ -80,6 +80,9 @@ var save_data = {
 			,"saveState": null
 			,"level": get_node_or_null("res://Levels/Level1.tscn")
 			,"position": Vector2(500, 500)
+			,"damage": 1
+			,"damage_upgrades": 0
+			,"armor": 0
 		},
 		"save1": {
 			"health":20
@@ -89,6 +92,9 @@ var save_data = {
 			,"saveState": null
 			,"level": get_node_or_null("res://Levels/Level1.tscn")
 			,"position": Vector2(500, 500)
+			,"damage": 1
+			,"damage_upgrades": 0
+			,"armor": 0
 
 		},
 		"save2": {
@@ -99,6 +105,9 @@ var save_data = {
 			,"saveState": null
 			,"level": get_node_or_null("res://Levels/Level1.tscn")
 			,"position": Vector2(500, 500)
+			,"damage": 1
+			,"damage_upgrades": 0
+			,"armor": 0
 
 		},
 		"save3": {
@@ -109,6 +118,9 @@ var save_data = {
 			,"saveState": null
 			,"level": get_node_or_null("res://Levels/Level1.tscn")
 			,"position": Vector2(500, 500)
+			,"damage": 1
+			,"damage_upgrades": 0
+			,"armor": 0
 
 		}
 	}
@@ -123,6 +135,9 @@ func save_game(save):
 		,"saveState": saveState[save]
 		,"level": current_level
 		,"position": var2str(current_position)
+		,"damage": damage
+		,"damage_upgrades": damage_upgrades
+		,"armor": armor
 
 	}
 
@@ -166,6 +181,9 @@ func load_game(save):
 	lives = save_data["saves"]["save" + str(save)]["lives"]
 	score = save_data["saves"]["save" + str(save)]["score"]
 	time = save_data["saves"]["save" + str(save)]["time"]
+	damage = save_data["saves"]["save" + str(save)]["damage"]
+	damage_upgrades = save_data["saves"]["save" + str(save)]["damage_upgrades"]
+	armor = save_data["saves"]["save" + str(save)]["armor"]
 	saveState[save] = save_data["saves"]["save" + str(save)]["saveState"]
 	current_position = str2var(save_data["saves"]["save" + str(save)]["position"])
 	var level = save_data["saves"]["save" + str(save)]["level"]

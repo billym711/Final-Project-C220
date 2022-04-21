@@ -1,0 +1,137 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Enemy/Zombie.tscn" type="PackedScene" id=2]
+
+[node name="FinalWave" type="Node2D"]
+
+[node name="Zombie" parent="." instance=ExtResource( 2 )]
+position = Vector2( 2025, 832 )
+
+[node name="Zombie2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1847, 788 )
+
+[node name="Zombie3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1606, 693 )
+
+[node name="Zombie4" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1405, 749 )
+
+[node name="Zombie5" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1504, 741 )
+
+[node name="Zombie6" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1304, 629 )
+
+[node name="Zombie7" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1258, 538 )
+
+[node name="Zombie8" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1386, 548 )
+
+[node name="Zombie9" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1316, 450 )
+
+[node name="Zombie10" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1514, 440 )
+
+[node name="Zombie11" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1468, 437 )
+
+[node name="Zombie12" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1643, 280 )
+
+[node name="Zombie13" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1559, 242 )
+
+[node name="Zombie14" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1768, 80 )
+
+[node name="Zombie15" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1821, 141 )
+
+[node name="Zombie16" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1921, 132 )
+
+[node name="Zombie17" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1886, 229 )
+
+[node name="Zombie18" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1663, 113 )
+
+[node name="Zombie19" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1200, 125 )
+
+[node name="Zombie20" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1303, 128 )
+
+[node name="Zombie21" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1256, 84 )
+
+[node name="Zombie22" parent="." instance=ExtResource( 2 )]
+position = Vector2( 759, 127 )
+
+[node name="Zombie23" parent="." instance=ExtResource( 2 )]
+position = Vector2( 853, 125 )
+
+[node name="Zombie24" parent="." instance=ExtResource( 2 )]
+position = Vector2( 126, 128 )
+
+[node name="Zombie25" parent="." instance=ExtResource( 2 )]
+position = Vector2( 234, 129 )
+
+[node name="Zombie26" parent="." instance=ExtResource( 2 )]
+position = Vector2( 180, 232 )
+
+[node name="Zombie27" parent="." instance=ExtResource( 2 )]
+position = Vector2( -228, 127 )
+
+[node name="Zombie28" parent="." instance=ExtResource( 2 )]
+position = Vector2( -126, 123 )
+
+[node name="Zombie29" parent="." instance=ExtResource( 2 )]
+position = Vector2( -175, 233 )
+
+[node name="Zombie30" parent="." instance=ExtResource( 2 )]
+position = Vector2( -336, 166 )
+
+[node name="Zombie31" parent="." instance=ExtResource( 2 )]
+position = Vector2( -804, 90 )
+
+[node name="Zombie32" parent="." instance=ExtResource( 2 )]
+position = Vector2( -813, 393 )
+
+[node name="Zombie33" parent="." instance=ExtResource( 2 )]
+position = Vector2( -855, 471 )
+
+[node name="Zombie34" parent="." instance=ExtResource( 2 )]
+position = Vector2( -633, 495 )
+
+[node name="Zombie35" parent="." instance=ExtResource( 2 )]
+position = Vector2( -680, 574 )
+
+[node name="Zombie36" parent="." instance=ExtResource( 2 )]
+position = Vector2( -870, 685 )
+
+[node name="Zombie37" parent="." instance=ExtResource( 2 )]
+position = Vector2( -883, 631 )
+
+[node name="Zombie38" parent="." instance=ExtResource( 2 )]
+position = Vector2( -896, 793 )
+
+[node name="Zombie39" parent="." instance=ExtResource( 2 )]
+position = Vector2( -606, 698 )
+
+[node name="Zombie40" parent="." instance=ExtResource( 2 )]
+position = Vector2( 640, 475 )
+
+[node name="Zombie41" parent="." instance=ExtResource( 2 )]
+position = Vector2( 560, 473 )
+
+[node name="Zombie42" parent="." instance=ExtResource( 2 )]
+position = Vector2( 803, 543 )
+
+[node name="Zombie43" parent="." instance=ExtResource( 2 )]
+position = Vector2( 597, 642 )
+
+[node name="Zombie44" parent="." instance=ExtResource( 2 )]
+position = Vector2( 753, 680 )

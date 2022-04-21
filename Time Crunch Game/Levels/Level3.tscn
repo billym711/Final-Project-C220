@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Assets/Map Tiles/cidade_demo.png" type="Texture" id=1]
 [ext_resource path="res://Player/Player_Container.gd" type="Script" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Enemy/Zombie.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Player/Car.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Enemy/Enemy_Container.gd" type="Script" id=6]
+[ext_resource path="res://Levels/Level3.gd" type="Script" id=7]
 
 [sub_resource type="NavigationPolygon" id=1]
 vertices = PoolVector2Array( -1024, 461, -1031, -41, 2057, -41, 2065, 978, -1020, 986 )
@@ -13,6 +14,7 @@ polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 4, 0, 3 ) ]
 outlines = [ PoolVector2Array( -1024, 461, -1031, -41, 2057, -41, 2065, 978, -1020, 986 ) ]
 
 [node name="Level3" type="Node2D"]
+script = ExtResource( 7 )
 
 [node name="Camera" parent="." instance=ExtResource( 3 )]
 
@@ -97,6 +99,10 @@ polygon = PoolVector2Array( -48.1655, -131.29, -10.8761, -134.397, -6.99176, -83
 position = Vector2( 346.675, 275.868 )
 polygon = PoolVector2Array( -48.1655, -131.29, -10.8761, -134.397, -6.99176, -83.1242, -48.1655, -79.2399 )
 
+[node name="CollisionPolygon2D46" type="CollisionPolygon2D" parent="Background/Sprite/StaticBody2D"]
+position = Vector2( 398.724, 168.661 )
+polygon = PoolVector2Array( -30.2975, -131.29, -10.8761, -134.397, -10.876, -91.6696, -31.8513, -91.6696 )
+
 [node name="CollisionPolygon2D29" type="CollisionPolygon2D" parent="Background/Sprite/StaticBody2D"]
 position = Vector2( 55.3514, 285.191 )
 polygon = PoolVector2Array( -48.1655, -131.29, -1.55374, -142.166, 3.88431, -77.6862, -48.1655, -79.2399 )
@@ -157,6 +163,10 @@ polygon = PoolVector2Array( -60.5952, -141.389, -14.7604, -131.29, -13.2067, -10
 position = Vector2( 237.137, 283.637 )
 polygon = PoolVector2Array( -26.4133, -140.612, 16.3141, -140.612, 41.1737, -81.5706, -48.1655, -79.2399 )
 
+[node name="CollisionPolygon2D47" type="CollisionPolygon2D" parent="Background/Sprite/StaticBody2D"]
+position = Vector2( 198.294, 285.968 )
+polygon = PoolVector2Array( -46.6116, -143.719, -34.9587, -142.943, -34.1819, -80.0168, -48.1655, -79.2399 )
+
 [node name="CollisionPolygon2D25" type="CollisionPolygon2D" parent="Background/Sprite/StaticBody2D"]
 position = Vector2( 312.493, 127.488 )
 polygon = PoolVector2Array( -64.4796, -114.976, -13.2067, -117.306, -6.99176, -83.1242, -65.2564, -83.1242 )
@@ -207,7 +217,7 @@ polygon = PoolVector2Array( -114.976, -152.265, -97.8846, -149.934, -92.4465, 87
 
 [node name="Sprite2" type="Sprite" parent="Background"]
 modulate = Color( 0.466667, 0.168627, 0.168627, 1 )
-position = Vector2( 1544, 467 )
+position = Vector2( 1542, 468 )
 scale = Vector2( 1.28723, 1.28723 )
 texture = ExtResource( 1 )
 flip_h = true
@@ -346,9 +356,17 @@ polygon = PoolVector2Array( -60.5952, -141.389, -14.7604, -131.29, -13.2067, -10
 position = Vector2( 237.137, 283.637 )
 polygon = PoolVector2Array( -26.4133, -140.612, 16.3141, -140.612, 41.1737, -81.5706, -48.1655, -79.2399 )
 
+[node name="CollisionPolygon2D47" type="CollisionPolygon2D" parent="Background/Sprite2/StaticBody2D"]
+position = Vector2( 195.769, 286.662 )
+polygon = PoolVector2Array( -45.8349, -141.389, -31.8514, -140.612, -31.0745, -80.0167, -45.058, -80.0167 )
+
 [node name="CollisionPolygon2D25" type="CollisionPolygon2D" parent="Background/Sprite2/StaticBody2D"]
 position = Vector2( 312.493, 127.488 )
 polygon = PoolVector2Array( -64.4796, -114.976, -13.2067, -117.306, -6.99176, -83.1242, -65.2564, -83.1242 )
+
+[node name="CollisionPolygon2D46" type="CollisionPolygon2D" parent="Background/Sprite2/StaticBody2D"]
+position = Vector2( 400.861, 154.596 )
+polygon = PoolVector2Array( -32.6282, -117.306, -13.2067, -117.306, -11.653, -82.3474, -33.4051, -81.5705 )
 
 [node name="CollisionPolygon2D26" type="CollisionPolygon2D" parent="Background/Sprite2/StaticBody2D"]
 position = Vector2( 170.327, 127.488 )
@@ -396,7 +414,7 @@ polygon = PoolVector2Array( -114.976, -152.265, -97.8846, -149.934, -92.4465, 87
 
 [node name="Sprite3" type="Sprite" parent="Background"]
 modulate = Color( 0.466667, 0.168627, 0.168627, 1 )
-position = Vector2( -516, 467 )
+position = Vector2( -512, 468 )
 scale = Vector2( 1.28723, 1.28723 )
 texture = ExtResource( 1 )
 flip_h = true
@@ -535,6 +553,10 @@ polygon = PoolVector2Array( -60.5952, -141.389, -14.7604, -131.29, -13.2067, -10
 position = Vector2( 237.137, 283.637 )
 polygon = PoolVector2Array( -26.4133, -140.612, 16.3141, -140.612, 41.1737, -81.5706, -48.1655, -79.2399 )
 
+[node name="CollisionPolygon2D46" type="CollisionPolygon2D" parent="Background/Sprite3/StaticBody2D"]
+position = Vector2( 198.1, 285.108 )
+polygon = PoolVector2Array( -47.3886, -144.496, -33.4051, -142.943, -30.2977, -80.7936, -48.1655, -79.2399 )
+
 [node name="CollisionPolygon2D25" type="CollisionPolygon2D" parent="Background/Sprite3/StaticBody2D"]
 position = Vector2( 312.493, 127.488 )
 polygon = PoolVector2Array( -64.4796, -114.976, -13.2067, -117.306, -6.99176, -83.1242, -65.2564, -83.1242 )
@@ -587,7 +609,7 @@ polygon = PoolVector2Array( -114.976, -152.265, -97.8846, -149.934, -92.4465, 87
 script = ExtResource( 2 )
 
 [node name="Car" parent="." instance=ExtResource( 5 )]
-position = Vector2( 471, 0 )
+position = Vector2( 2314, 932 )
 
 [node name="Navigation2D" type="Navigation2D" parent="."]
 
@@ -604,4 +626,24 @@ position = Vector2( 109.522, 372 )
 [node name="Zombie2" parent="Enemy_Container" instance=ExtResource( 4 )]
 position = Vector2( 169.522, 309 )
 
+[node name="Zombie3" parent="Enemy_Container" instance=ExtResource( 4 )]
+position = Vector2( 878.522, 759 )
+scale = Vector2( 1.28723, 1.28723 )
+
+[node name="Zombie4" parent="Enemy_Container" instance=ExtResource( 4 )]
+position = Vector2( 1157.52, 766 )
+scale = Vector2( 1.28723, 1.28723 )
+
 [node name="Effects" type="Node2D" parent="."]
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="Tween2" type="Tween" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[connection signal="tween_completed" from="Tween2" to="." method="_on_Tween2_tween_completed"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

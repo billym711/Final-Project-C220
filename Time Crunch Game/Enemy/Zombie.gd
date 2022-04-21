@@ -3,7 +3,7 @@ extends KinematicBody2D
 var player = null
 onready var ray = $RayCast2D
 onready var nav = load("res://Levels/Level1.tscn")
-export var speed = 50
+export var speed = 35
 export var looking_speed = 25
 var line_of_sight = false
 

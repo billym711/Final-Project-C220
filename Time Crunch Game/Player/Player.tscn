@@ -16,6 +16,7 @@ animations = [ {
 
 [node name="Player" type="KinematicBody2D"]
 position = Vector2( 509, 311 )
+scale = Vector2( 0.5, 0.5 )
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_group_": true
@@ -32,7 +33,7 @@ flip_v = true
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2( 2, 2 )
 scale = Vector2( 0.768601, 0.665761 )
-polygon = PoolVector2Array( 21, 17, 11.6, 23, -12.2, 23, -21, 18.2, -21, -23, 21, -23 )
+polygon = PoolVector2Array( 18.2148, 3.00409, 10.4084, 18.0245, -15.6128, 15.0204, -18.215, 0, -13.0107, -15.0204, 13.0106, -15.0204 )
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2( 1, 1 )
@@ -42,11 +43,11 @@ collision_mask = 15
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
 position = Vector2( 2, 3.99999 )
 scale = Vector2( 1.38587, 1.30931 )
-polygon = PoolVector2Array( -13, -15, 10, -15, 10, 7, 6, 11, -8, 11, -12, 8, -13, 0 )
+polygon = PoolVector2Array( -9.38037, -11.4564, 7.93726, -11.4564, 10.8235, -0.763763, 7.93726, 6.87384, -7.93719, 6.87384, -12.2667, 3.81882, -12.2667, -2.29129 )
 
 [node name="Engine" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
-volume_db = -15.731
+volume_db = -5.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true

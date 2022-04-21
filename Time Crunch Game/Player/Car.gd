@@ -19,13 +19,26 @@ func _ready():
 
 func _on_Area2D_body_entered(body):
 	if body.name == "Player":
-		print(get_tree().get_current_scene().get_name())
-		if get_tree().get_current_scene().get_name() == "Level1":
-			var scene = get_tree().change_scene("res://Levels/Level2.tscn")
-		if get_tree().get_current_scene().get_name() == "Level2":
-			var scene = get_tree().change_scene("res://Levels/Level3.tscn")
-		if get_tree().get_current_scene().get_name() == "Level3":
-			var scene = get_tree().change_scene("res://UI/End_Game.tscn")
+		get_parent().driveOut()
+		if Global.current_level != 3:
+			body.visible = false
+			body.takeInput = false
+		
+func next():
+	print(get_tree().get_current_scene().get_name())
+	if get_tree().get_current_scene().get_name() == "Level1":
+		var scene = get_tree().change_scene("res://Levels/Level2.tscn")
+	if get_tree().get_current_scene().get_name() == "Level2":
+		var scene = get_tree().change_scene("res://Levels/Level3.tscn")
+	if get_tree().get_current_scene().get_name() == "Level3":
 		Global.damage += Global.damage_upgrades
-		Global.health += Global.armor
-		Global.current_level += 1
+		Global.update_health(Global.armor)
+		Global.update_time(99999999999999999)
+		$Area2D.monitoring = false
+		return
+		#var scene = get_tree().change_scene("res://UI/End_Game.tscn")
+	Global.damage += Global.damage_upgrades
+	Global.health += Global.armor
+	Global.current_level += 1
+	Global.time = 100
+	Global.current_position = Global.starting_position
